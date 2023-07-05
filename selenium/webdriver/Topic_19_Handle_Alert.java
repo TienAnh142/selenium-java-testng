@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.server.browserlaunchers.Sleeper;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,8 +30,8 @@ public class Topic_19_Handle_Alert {
 	Alert alert;
 	String authenFirefox = projectPath + "\\autoIT\\authen_firefox.exe";
 	String authenChrome = projectPath + "\\autoIT\\authen_chrome.exe";
-	String username="admin";
-	String password="admin";
+	String username = "admin";
+	String password = "admin";
 
 	@BeforeClass
 	public void beforeClass() {
@@ -116,7 +115,7 @@ public class Topic_19_Handle_Alert {
 				"Congratulations! You must have the proper credentials.");
 	}
 
-	//@Test
+	// @Test
 	public void TC_05_Authentication_Alert_II() {
 		String url = "http://the-internet.herokuapp.com/basic_auth";
 		String username = "admin";
@@ -125,13 +124,13 @@ public class Topic_19_Handle_Alert {
 		Assert.assertEquals(driver.findElement(By.cssSelector("div#content p")).getText(),
 				"Congratulations! You must have the proper credentials.");
 	}
-	
+
 	@Test
 	public void TC_06_Authentication_Alert_III_AutoIT() throws IOException {
-		if(driver.toString().contains("firefox")) {
-			Runtime.getRuntime().exec(new String[] {authenFirefox, username,password});
-		}else if(driver.toString().contains("chrome")) {
-			Runtime.getRuntime().exec(new String[] {authenChrome,username,password});
+		if (driver.toString().contains("firefox")) {
+			Runtime.getRuntime().exec(new String[] { authenFirefox, username, password });
+		} else if (driver.toString().contains("chrome")) {
+			Runtime.getRuntime().exec(new String[] { authenChrome, username, password });
 		}
 		driver.get("http://the-internet.herokuapp.com/basic_auth");
 		sleepInSecond(5);
