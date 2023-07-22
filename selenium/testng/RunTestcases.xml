@@ -1,31 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Suite" thread-count="3">
-	<!-- <groups>
-			<run>
-				<include name="cart"></include>
-			</run>
-		</groups>
-		<packages>
-			<package name="tiki.admin"></package>
-		</packages> -->
-	<parameter name="environment" value="live"></parameter>
+<listeners>
+<listener class-name="listener.ExtendReportListener"></listener></listeners>
+<parameter name="envrironment" value="live"></parameter>
 	<test name="Run on FIREFOX">
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
-			<class name="testng.TC06_Parameter_Environment"></class>
-		</classes>
-	</test>
-	<test name="Run on CHROME">
-		<parameter name="browser" value="chrome"></parameter>
-		<classes>
-			<class name="testng.TC06_Parameter_Environment"></class>
-		</classes>
-	</test>
-	<test name="Run on EDGE">
-		<parameter name="browser" value="edge"></parameter>
-		<classes>
-			<class name="testng.TC06_Parameter_Environment"></class>
+			<class name="testng.TC09_Listener"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
